@@ -8,7 +8,11 @@ console.log(product.name)
         <>
             <ProductCard>
 
-                <Description></Description>
+                <Description>
+                    <script>
+                    product.name
+                    </script>
+                </Description>
                 <Button onclick></Button>
             </ProductCard>
         </>
