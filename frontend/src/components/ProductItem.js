@@ -1,22 +1,32 @@
 import styled from 'styled-components/macro';
+import * as ProductHeader from "./ProductHeader";
 
 
 
-export default function ProductItem({product}) {
-console.log(product.name)
+
+
+
+export default function ProductItem({product, selectProdcut}) {
+
+    const handleSelect= ()=>{
+        console.log("Product: "+product.name+" wurde ausgewählt")
+    }
     return (
         <>
             <ProductCard>
-
+                <Headline>
+                    {product.name}
+                </Headline>
                 <Description>
-                    <script>
-                    product.name
-                    </script>
+                   GB: {product.gb} <br />
+                   CPU: {product.cpu}
                 </Description>
-                <Button onclick></Button>
+                <Button onClick={()=>{selectProdcut(product)}}>Select</Button>
             </ProductCard>
         </>
-    )}
+    )
+}
+
 
 const ProductCard = styled.div`
 background-color: lightblue;
@@ -36,8 +46,19 @@ const Description = styled.div`
   padding: 5px 22px;
 `
 
+const Headline = styled.div`
+  flex-wrap: wrap;
+  text-align: top;
+  position:absolute;
+  top: 4px;
+  margin: 5px;
+  padding: 5px 22px;
+`
+
 
 const Button = styled.button`
-  justify-self: left;
+  position:absolute;
+  top: 4px;
+  right: 10px;
   cursor: pointer;
 `
