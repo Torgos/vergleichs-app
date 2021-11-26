@@ -1,6 +1,7 @@
 package com.example.backend.model;
 
 public class Product {
+    private String id;
     private String name;
     private int gb;
     private double cpu;
@@ -14,7 +15,8 @@ public class Product {
                 '}';
     }
 
-    public Product(String name, int gb, double cpu) {
+    public Product(String id, String name, int gb, double cpu) {
+        this.id = id;
         this.name = name;
         this.gb = gb;
         this.cpu= cpu;
@@ -39,4 +41,12 @@ public class Product {
     public double getCpu() {return cpu; }
 
     public void setCpu(double cpu) {this.cpu = cpu; }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
