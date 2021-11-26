@@ -3,6 +3,7 @@ import * as React from "react";
 import styled from "styled-components/macro";
 import { Button,Modal} from 'react-bootstrap';
 import {useState} from "react";
+import {ProductCompares} from "./ProductCompares";
 
 
 export function ProductHeader({selectedProducts, selectProduct}){
@@ -10,34 +11,14 @@ export function ProductHeader({selectedProducts, selectProduct}){
 
     return(
 <HeaderContainer>
-    { selectedProducts?.map((selectedProducts) => {
-        return <>
-            <ProductCard>
-                <Headline>
-                    {selectedProducts.name}
-                </Headline>
-                <Description>
-                    {selectedProducts.id}
-
-                    <p>GB: {selectedProducts.gb} </p>
-                    <p>CPU: {selectedProducts.cpu}</p>
-                </Description>
-            </ProductCard>
-        </>
-    }) }
-    <Button onClick={()=>{compareProducts(selectedProducts)}}>Vergleichen</Button>
-
+    {selectedProducts.length === 2 &&
+        <ProductCompares selectedProducts = {selectedProducts}/>
+    }
 </HeaderContainer>
 )
-
 }
 
-export function compareProducts(productList){
-    const productA = productList[0]
-    const productB = productList[1]
-console.log(productA.name);
 
-}
 
 
 // <ProductItem key={item.id} product={item} selectProdcut={selectProduct}/>
