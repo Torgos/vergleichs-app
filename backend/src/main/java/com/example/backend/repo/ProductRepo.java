@@ -2,13 +2,19 @@ package com.example.backend.repo;
 
 import com.example.backend.model.Product;
 import lombok.Data;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
-@Data
-public class ProductRepo {
+@Repository
+public interface ProductRepo extends PagingAndSortingRepository<Product, String> {
 
-    ArrayList<Product>products = new ArrayList<Product>();
+        List<Product> findAll();
+
+  /*    ArrayList<Product>products = new ArrayList<Product>();
 
     public ProductRepo() {
 
@@ -21,7 +27,7 @@ public class ProductRepo {
         products.add(new Product("7","AMD Ryxen480",12,2.8));
     }
 
-
+*/
 
 }
 
