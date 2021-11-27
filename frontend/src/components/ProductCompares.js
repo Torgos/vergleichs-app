@@ -5,10 +5,6 @@ import styled from "styled-components/macro";
 
 export function ProductCompares({selectedProducts}){
 
-    //const gb1 = productA(selectedProducts[0].gb,selectedProducts[1].gb);
-    //const gb2 = compare(selectedProducts[1].gb,selectedProducts[0].gb);
-    //const cpu1 = compare(selectedProducts[0].cpu,selectedProducts[1].cpu);
-    //const cpu2 = compare(selectedProducts[1].cpu,selectedProducts[0].cpu);
     const compare= (productStat,otherProductStat) => {
         if (productStat > otherProductStat){
             return(
